@@ -1,5 +1,5 @@
 # The Dockerfile for build localhost source, not git repo
-FROM alpine:latest as builder
+FROM debian:buster as builder
 
 MAINTAINER cppla https://cpp.la
 
