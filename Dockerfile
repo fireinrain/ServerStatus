@@ -3,13 +3,13 @@ FROM debian:buster as builder
 
 MAINTAINER cppla https://cpp.la
 
-RUN apk update && apk add gcc g++ make curl-dev musl-dev
+RUN apt-get update -y && apt-get -y install gcc g++ make libcurl4-openssl-dev
 
 COPY . .
 
 WORKDIR /server
 
-RUN make -j
+RUN make
 RUN pwd && ls -a
 
 # Nginx Alpine as base image
